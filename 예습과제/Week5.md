@@ -1,4 +1,4 @@
-예습 과제를 블로그에 정리하고 있습니다. (블로그 링크)[https://say-young.tistory.com/manage/newpost/34?type=post&returnURL=https%3A%2F%2Fsay-young.tistory.com%2Fentry%2FCS231n-Lec5]
+예습 과제를 블로그에 정리하고 있습니다. https://say-young.tistory.com/entry/CS231n-Lec5?category=923651
 
 ## CS231n Convolutional Neural Networks for Visual Recognition
 
