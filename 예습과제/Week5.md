@@ -3,6 +3,7 @@
 ## CS231n Convolutional Neural Networks for Visual Recognition
 
 1. ConvNet (CNN/Convolutional Neural Networks)
+
 ConvNet은 우리가 이전까지 살펴봤던 일반 신경망과 매우 유사하다. 학습 가능한 가중치(weight)와 편향(bias)으로 구성되어 있다. 각 뉴런은 입력을 받아 내적 연산(dot product)을 한 뒤, 선택에 따라 non-linear 연산을 한다. 전체 네트워크는 일반 신경망과 마찬가지로 미분 가능한 하나의 score function을 갖게 된다. 마지막 레이어에 loss function을 가지며, 우리가 일반 신경망을 학습시킬 때 사용하던 각종 기법들을 동일하게 적용할 수 있다.
 
 ConvNet 아키텍처는 입력 데이터가 image라는 가정을 하기 대문에 image data가 갖는 특성들을 인코딩할 수 있다. 이러한 아키텍처는 forward function을 더욱 효과적으로 구현할 수 있고, 네트워크를 학습시키는데 필요한 parameter의 수를 크게 줄일 수 있게 해준다.
