@@ -75,6 +75,7 @@ class FullyConnectedNet(object):
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         
         layer_dims = np.hstack((input_dim, hidden_dims, num_classes))
+
         for i in range(self.num_layers):
             W = np.random.normal(0, weight_scale, (layer_dims[i], layer_dims[i + 1]))
             b = np.zeros(layer_dims[i + 1])
@@ -159,10 +160,17 @@ class FullyConnectedNet(object):
         # layer, etc.                                                              #
         ############################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
-        
+
+        # forward pass
+
         x = X
         caches = []
         dropout_caches = []
+
+        # 정규화 작업을 거치는지, 거친다면 batchnorm, layernorm중 어떤 것을 사용하는지, dropout을 사용하는지에 따라 아래와 같이 분기처리를 해줍니다.
+        # 정규화 작업을 거칠 경우, gamma 값과 beta 값 업데이트가 필요합니다.
+        # 작업 이후 cahches 배열에 결과를 append하고, out 값을 x로 업데이트합니다.
+
         for i in range(self.num_layers - 1):
             W = self.params['W' + str(i + 1)]
             b = self.params['b' + str(i + 1)]
@@ -214,6 +222,9 @@ class FullyConnectedNet(object):
         ############################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
+        # backward pass
+        # forward 단계를 통해 training data를 network에 전달하고, output layer에서 loss를 구한 후 backward pass를 시작합니다.
+
         loss, dout = softmax_loss(scores, y)
         for i in range(self.num_layers):
             W = self.params['W' + str(i + 1)]
@@ -223,6 +234,9 @@ class FullyConnectedNet(object):
         dw += self.reg * self.params['W' + str(self.num_layers)]
         grads['W' + str(self.num_layers)] = dw
         grads['b' + str(self.num_layers)] = db
+
+        # 정규화 작업을 거치는지, 거친다면 batchnorm, layernorm중 어떤 것을 사용하는지, dropout을 사용하는지에 따라 아래와 같이 분기처리를 해줍니다.
+        # 각 파라미터의 기울기를 구하고 역전파를 진행합니다.
 
         for i in range(self.num_layers - 2, -1, -1):
             if self.use_dropout:
@@ -247,7 +261,6 @@ class FullyConnectedNet(object):
                 grads['gamma' + str(i + 1)] = dgamma
                 grads['beta' + str(i + 1)] = dbeta
                 
-
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         ############################################################################
         #                             END OF YOUR CODE                             #
