@@ -1,6 +1,4 @@
-예습 과제를 블로그에 정리하고 있습니다. https://say-young.tistory.com/entry/CS231n-Lec5?category=923651
-
-## CS231n Convolutional Neural Networks for Visual Recognition
+## ✔ CS231n 5주차 예습과제
 
 1. ConvNet (CNN/Convolutional Neural Networks)
 

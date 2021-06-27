@@ -1,6 +1,4 @@
-블로그에 정리하고 있습니다. 세미나 이후 부족한 내용을 보충할 예정입니다.
-https://say-young.tistory.com/entry/CS231n-Lecture-6-Training-Neural-Networks-I
-
+## ✔ CS231n 6주차 예습과제
 
 1. Activation Functions
 
