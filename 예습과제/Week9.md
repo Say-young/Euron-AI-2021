@@ -1,4 +1,5 @@
 ## ✔ CS231n 9주차 예습과제
+(세미나 수강 후 내용 보완하여 블로그에 정리 글 올릴 예정)
 
 1. CNN Architectures
 
@@ -21,7 +22,7 @@ main architecture : AlexNet, VGG, GoogLeNet, RestNet
     * 단점
         * pooling layer도 depth를 증가시킴
         * input channel과 output channel의 크기가 커서 computational complexity가 큼
-        > bottleneck layer(1x1 conv)를 통해 original input의 dimension을 1x1 conv layer의 depth로 projection함. 이를 통해서 computational complexity를 관리할 수 있게 ㄷ됨.
+        > bottleneck layer(1x1 conv)를 통해 original input의 dimension을 1x1 conv layer의 depth로 projection함. 이를 통해서 computational complexity를 관리할 수 있게 됨.
     * 요약하자면 더 깊어졌고, 더 높은 효율성을 가지며, FC Layer가 없다.
 
 * ResNet
